@@ -289,22 +289,5 @@ These previews demonstrate the saved processing outputs; numerical correctness i
 
 **Status:** CPU implementation, filter examples, basic correctness checks, and image I/O/output pipeline completed. No CPU convolution performance table is claimed: the current main program has no calculation timer.
 
-## 10. Remaining team work
 
-| Lab section | Remaining work | Reuse |
-|---|---|---|
-| Parts 1–4 | No missing implementation or specified measurement work identified; retain the completed local results | Existing matrix sources and logs |
-| Part 5 | Incorporate the existing figures and timing-scope discussion in the final team presentation | Part 5 CSV and PNGs |
-| Part 6 | Plot all implementations using the existing data; add optimization research references and video explanation | Consolidated tables above, Part 6 logs, and matrix plotting script |
-| Part 7 | Include the shared-library description in the final presentation; no additional functionality is required | Existing matrix library and Python tests |
-| Part 8.1 | Add CPU computation timing; collect at least three image sizes M and three filter sizes N; complete the sample-image presentation | CPU convolution and image scripts |
-| Part 8.2 | Implement CUDA convolution, verify against CPU results, and compare timings on the same images and filters | CPU reference, known-answer tests, and image file formats |
-| Part 8.3 | Export CUDA convolution through the shared library, call it from Python, and compare CPU C, direct CUDA, and Python-to-CUDA execution | Part 7 interface pattern and the new CUDA convolution |
-| Final deliverables | Complete the team report/video with all-implementation runtime plots, scaling, overhead, optimization trade-offs, and Python library description | Existing results plus remaining Part 8 experiments |
-
-A practical Part 8 test matrix is M = 256, 512, 1024 and mean-filter N = 3, 5, 7, covering all nine combinations. This is a proposed experiment plan, not completed data. Edge and sharpen examples remain at N = 3.
-
-For application-level comparisons, use consistent timing boundaries and exclude image loading/saving unless explicitly reporting I/O. Separate CUDA kernel time from allocation/transfer/call time. Preserve the current local results when collecting measurements on another machine.
-
-The existing `matrix/plot_part5.py` contains fixed Part 5 data and currently writes under `matrix/results/`. When extending it, read or insert the correct recorded data and point its output to the intended repository results directory.
 
