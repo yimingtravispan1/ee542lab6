@@ -1,0 +1,6 @@
+call_median_ms=2.263764000
+kernel_median_ms=0.115840003
+GPU convolution completed.
+Image: 1024 x 1024
+Filter: sharpen, 3 x 3
+Output: /home/ecs-user/ee542lab6/results/part8/image1_M1024_sharpen_N3_cuda.f32

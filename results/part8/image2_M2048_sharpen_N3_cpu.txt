@@ -1,0 +1,5 @@
+call_median_ms=77.066857000
+CPU convolution completed.
+Image: 2048 x 2048
+Filter: sharpen, 3 x 3
+Output: /home/ecs-user/ee542lab6/results/part8/image2_M2048_sharpen_N3_cpu.f32

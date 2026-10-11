@@ -1,0 +1,16 @@
+image0_M512_mean_N3: PASSED; CPU=4.820, CUDA=0.933, Python=1.019 ms
+image0_M512_mean_N5: PASSED; CPU=11.643, CUDA=0.910, Python=0.998 ms
+image0_M512_mean_N7: PASSED; CPU=21.597, CUDA=0.930, Python=1.048 ms
+image0_M512_edge_N3: PASSED; CPU=4.806, CUDA=0.896, Python=0.998 ms
+image0_M512_sharpen_N3: PASSED; CPU=4.859, CUDA=0.881, Python=0.984 ms
+image1_M1024_mean_N3: PASSED; CPU=20.267, CUDA=2.092, Python=2.176 ms
+image1_M1024_mean_N5: PASSED; CPU=46.651, CUDA=2.127, Python=2.285 ms
+image1_M1024_mean_N7: PASSED; CPU=86.738, CUDA=2.375, Python=2.555 ms
+image1_M1024_edge_N3: PASSED; CPU=19.293, CUDA=2.260, Python=2.357 ms
+image1_M1024_sharpen_N3: PASSED; CPU=19.942, CUDA=2.264, Python=2.374 ms
+image2_M2048_mean_N3: PASSED; CPU=83.678, CUDA=7.082, Python=7.258 ms
+image2_M2048_mean_N5: PASSED; CPU=188.273, CUDA=7.659, Python=7.859 ms
+image2_M2048_mean_N7: PASSED; CPU=347.871, CUDA=9.224, Python=9.324 ms
+image2_M2048_edge_N3: PASSED; CPU=78.798, CUDA=7.324, Python=7.453 ms
+image2_M2048_sharpen_N3: PASSED; CPU=77.067, CUDA=7.262, Python=7.525 ms
+Saved /home/ecs-user/ee542lab6/results/part8/comparison.csv

@@ -1,0 +1,11 @@
+Identity: PASSED; max_abs_error=0
+Asymmetric and zero padding: PASSED; max_abs_error=0
+Profiled interface: PASSED; max_abs_error=0
+Signed output: PASSED; max_abs_error=0
+CPU/GPU M=1, N=1: PASSED; max_abs_error=0
+CPU/GPU M=17, N=3: PASSED; max_abs_error=1.5258789e-05
+CPU/GPU M=65, N=5: PASSED; max_abs_error=1.5258789e-05
+CPU/GPU M=65, N=31: PASSED; max_abs_error=1.5258789e-05
+CPU/GPU M=128, N=7: PASSED; max_abs_error=1.5258789e-05
+uint32 range and layout: PASSED; max_abs_error=0
+All Part 8 convolution tests PASSED.

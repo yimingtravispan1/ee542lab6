@@ -1,0 +1,6 @@
+call_median_ms=7.081527000
+kernel_median_ms=0.380928010
+GPU convolution completed.
+Image: 2048 x 2048
+Filter: mean, 3 x 3
+Output: /home/ecs-user/ee542lab6/results/part8/image2_M2048_mean_N3_cuda.f32

@@ -1,0 +1,5 @@
+call_median_ms=11.642985000
+CPU convolution completed.
+Image: 512 x 512
+Filter: mean, 5 x 5
+Output: /home/ecs-user/ee542lab6/results/part8/image0_M512_mean_N5_cpu.f32
