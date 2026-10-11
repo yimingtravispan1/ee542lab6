@@ -1,0 +1,8 @@
+Implementation: cuBLAS SGEMM; math mode: DEFAULT
+N=512 run=1 kernel_ms=0.068608
+N=512 run=2 kernel_ms=0.031584
+N=512 run=3 kernel_ms=0.030816
+Checking every element against CPU...
+Median cuBLAS GPU time (N=512): 0.031584 ms
+Max absolute error: 0.00019836426
+Verification: PASSED (0 mismatches)

@@ -1,0 +1,13 @@
+Known 2x2: shape=(2, 2), dtype=float32
+  Python wrapper elapsed: 252.979 ms
+  Max absolute error: 0
+  Verification: PASSED (0 mismatches)
+Boundary N=65: shape=(65, 65), dtype=float32
+  Python wrapper elapsed: 0.692 ms
+  Max absolute error: 6.6010613e-06
+  Verification: PASSED (0 mismatches)
+Basic N=512: shape=(512, 512), dtype=float32
+  Python wrapper elapsed: 1.218 ms
+  Max absolute error: 0.00020752547
+  Verification: PASSED (0 mismatches)
+All Part 7 basic tests PASSED.

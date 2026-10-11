@@ -1,0 +1,3 @@
+GPU: NVIDIA GeForce RTX 5070
+Result: 11 12 13 14
+CUDA test PASSED

@@ -1,0 +1,7 @@
+N=2048 run=1 kernel_ms=2.841280
+N=2048 run=2 kernel_ms=2.843488
+N=2048 run=3 kernel_ms=2.843296
+Checking every element against CPU...
+Median kernel time (N=2048): 2.843296 ms
+Max absolute error: 0.00015258789
+Verification: PASSED (0 mismatches)

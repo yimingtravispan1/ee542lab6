@@ -1,0 +1,60 @@
+N=128 run=1
+Correctness check PASSED
+CPU execution time (N=128): 0.000758 seconds
+Checksum: 512431.006624
+N=128 run=2
+Correctness check PASSED
+CPU execution time (N=128): 0.000742 seconds
+Checksum: 512431.006624
+N=128 run=3
+Correctness check PASSED
+CPU execution time (N=128): 0.000738 seconds
+Checksum: 512431.006624
+N=256 run=1
+Correctness check PASSED
+CPU execution time (N=256): 0.006982 seconds
+Checksum: 4114682.338589
+N=256 run=2
+Correctness check PASSED
+CPU execution time (N=256): 0.006994 seconds
+Checksum: 4114682.338589
+N=256 run=3
+Correctness check PASSED
+CPU execution time (N=256): 0.006992 seconds
+Checksum: 4114682.338589
+N=512 run=1
+Correctness check PASSED
+CPU execution time (N=512): 0.056219 seconds
+Checksum: 32805642.217308
+N=512 run=2
+Correctness check PASSED
+CPU execution time (N=512): 0.060509 seconds
+Checksum: 32805642.217308
+N=512 run=3
+Correctness check PASSED
+CPU execution time (N=512): 0.057760 seconds
+Checksum: 32805642.217308
+N=1024 run=1
+Correctness check PASSED
+CPU execution time (N=1024): 2.239783 seconds
+Checksum: 262230666.952103
+N=1024 run=2
+Correctness check PASSED
+CPU execution time (N=1024): 2.067839 seconds
+Checksum: 262230666.952103
+N=1024 run=3
+Correctness check PASSED
+CPU execution time (N=1024): 2.097345 seconds
+Checksum: 262230666.952103
+N=2048 run=1
+Correctness check PASSED
+CPU execution time (N=2048): 46.232317 seconds
+Checksum: 2103616820.634979
+N=2048 run=2
+Correctness check PASSED
+CPU execution time (N=2048): 38.574760 seconds
+Checksum: 2103616820.634979
+N=2048 run=3
+Correctness check PASSED
+CPU execution time (N=2048): 39.378989 seconds
+Checksum: 2103616820.634979

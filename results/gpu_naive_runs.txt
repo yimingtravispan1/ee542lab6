@@ -1,0 +1,35 @@
+N=128 run=1 kernel_ms=0.009312
+N=128 run=2 kernel_ms=0.012096
+N=128 run=3 kernel_ms=0.007264
+Checking every element against CPU...
+Median kernel time (N=128): 0.009312 ms
+Max absolute error: 7.6293945e-06
+Verification: PASSED (0 mismatches)
+N=256 run=1 kernel_ms=0.049504
+N=256 run=2 kernel_ms=0.025536
+N=256 run=3 kernel_ms=0.028768
+Checking every element against CPU...
+Median kernel time (N=256): 0.028768 ms
+Max absolute error: 1.5258789e-05
+Verification: PASSED (0 mismatches)
+N=512 run=1 kernel_ms=0.140000
+N=512 run=2 kernel_ms=0.137760
+N=512 run=3 kernel_ms=0.141120
+Checking every element against CPU...
+Median kernel time (N=512): 0.140000 ms
+Max absolute error: 3.0517578e-05
+Verification: PASSED (0 mismatches)
+N=1024 run=1 kernel_ms=1.001472
+N=1024 run=2 kernel_ms=1.002496
+N=1024 run=3 kernel_ms=1.010336
+Checking every element against CPU...
+Median kernel time (N=1024): 1.002496 ms
+Max absolute error: 7.6293945e-05
+Verification: PASSED (0 mismatches)
+N=2048 run=1 kernel_ms=7.970112
+N=2048 run=2 kernel_ms=7.982496
+N=2048 run=3 kernel_ms=7.988416
+Checking every element against CPU...
+Median kernel time (N=2048): 7.982496 ms
+Max absolute error: 0.00015258789
+Verification: PASSED (0 mismatches)

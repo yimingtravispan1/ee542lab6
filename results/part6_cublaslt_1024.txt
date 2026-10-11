@@ -1,0 +1,31 @@
+N=1024
+Baseline: cuBLAS SGEMM, DEFAULT math
+Tuned: cuBLASLt, CUBLAS_COMPUTE_32F
+Workspace limit: 33554432 bytes
+Returned candidates: 8
+candidate=0 search_median_ms=0.119904 workspace=512
+candidate=1 search_median_ms=0.126240 workspace=512
+candidate=2 search_median_ms=0.133280 workspace=128
+candidate=3 search_median_ms=0.114944 workspace=128
+candidate=4 search_median_ms=0.122208 workspace=128
+candidate=5 search_median_ms=0.121696 workspace=0
+candidate=6 search_median_ms=0.145440 workspace=128
+candidate=7 search_median_ms=0.179264 workspace=0
+Selected candidate index: 3
+Selected workspace requirement: 128 bytes
+Search wall time: 8.972 ms
+run=1 baseline_ms=0.170336 tuned_ms=0.114464
+run=2 baseline_ms=0.119328 tuned_ms=0.112544
+run=3 baseline_ms=0.120032 tuned_ms=0.112736
+run=4 baseline_ms=0.119040 tuned_ms=0.112960
+run=5 baseline_ms=0.118528 tuned_ms=0.111200
+run=6 baseline_ms=0.119424 tuned_ms=0.112992
+run=7 baseline_ms=0.119296 tuned_ms=0.113888
+Checking both results against CPU...
+Median cuBLAS baseline: 0.119328 ms
+Median tuned cuBLASLt: 0.112960 ms
+Speedup baseline/tuned: 1.0564x
+Baseline max error: 0.00064086914
+Tuned max error: 0.00064086914
+Baseline verification: PASSED (0 mismatches)
+Tuned verification: PASSED (0 mismatches)
