@@ -1,0 +1,4 @@
+Identity: PASSED (0 mismatches)
+Asymmetric convolution: PASSED (0 mismatches)
+Signed edge response: PASSED (0 mismatches)
+CPU convolution basic tests: PASSED

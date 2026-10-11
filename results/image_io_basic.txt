@@ -1,0 +1,6 @@
+Image size: 512 x 512
+Pixel dtype: uint32
+Pixel range: 13 to 255
+Compute input: images/input_512.u32
+Grayscale preview: images/input_512_gray.png
+Image read/write verification: PASSED
