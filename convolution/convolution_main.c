@@ -2,16 +2,32 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
+#include <time.h>
 
 #include "convolution.h"
+#ifdef CONVOLUTION_GPU
+#include "convolution_gpu.h"
+#endif
+
+static double elapsed_ms(struct timespec start, struct timespec end)
+{
+    return (end.tv_sec - start.tv_sec) * 1000.0
+         + (end.tv_nsec - start.tv_nsec) / 1000000.0;
+}
+
+static int compare_double(const void *a, const void *b)
+{
+    double x = *(const double *)a, y = *(const double *)b;
+    return (x > y) - (x < y);
+}
 
 
 int main(int argc, char *argv[])
 {
-    if (argc != 5) {
+    if (argc != 5 && argc != 6) {
         fprintf(stderr,
                 "Usage: %s input.u32 output.f32 "
-                "mean|edge|sharpen N\n",
+                "mean|edge|sharpen N [repeats]\n",
                 argv[0]);
         return 1;
     }
@@ -37,6 +53,15 @@ int main(int argc, char *argv[])
     }
 
     int N = (int)parsed_n;
+    int repeats = 7;
+    if (argc == 6) {
+        long value = strtol(argv[5], &end, 10);
+        if (end == argv[5] || *end != '\0' || value < 1 || value > 1000) {
+            fprintf(stderr, "repeats must be between 1 and 1000.\n");
+            return 1;
+        }
+        repeats = (int)value;
+    }
     float filter[31 * 31] = {0};
 
     if (strcmp(argv[3], "mean") == 0) {
@@ -118,10 +143,34 @@ int main(int argc, char *argv[])
     input_file = NULL;
 
   
-    if (conv2d_cpu(image, filter, output, M, N) != 0) {
-        fprintf(stderr, "CPU convolution failed.\n");
-        goto cleanup;
+    /* One warmup; time only convolution calls, excluding file I/O and
+     * host buffer allocation. GPU calls include allocation and transfers. */
+    double call_times[1000], kernel_times[1000];
+    for (int run = -1; run < repeats; ++run) {
+        struct timespec begin, finish;
+        float kernel_ms = 0.0f;
+        if (clock_gettime(CLOCK_MONOTONIC, &begin) != 0) goto cleanup;
+#ifdef CONVOLUTION_GPU
+        int code = gpu_convolution_timed(image, filter, output, M, N, &kernel_ms);
+#else
+        int code = conv2d_cpu(image, filter, output, M, N);
+#endif
+        if (clock_gettime(CLOCK_MONOTONIC, &finish) != 0) goto cleanup;
+        if (code != 0) {
+            fprintf(stderr, "Convolution failed: %d\n", code);
+            goto cleanup;
+        }
+        if (run >= 0) {
+            call_times[run] = elapsed_ms(begin, finish);
+            kernel_times[run] = kernel_ms;
+        }
     }
+    qsort(call_times, repeats, sizeof(double), compare_double);
+    qsort(kernel_times, repeats, sizeof(double), compare_double);
+    printf("call_median_ms=%.9f\n", (call_times[(repeats - 1) / 2] + call_times[repeats / 2]) / 2);
+#ifdef CONVOLUTION_GPU
+    printf("kernel_median_ms=%.9f\n", (kernel_times[(repeats - 1) / 2] + kernel_times[repeats / 2]) / 2);
+#endif
 
 
     output_file = fopen(argv[2], "wb");
@@ -146,7 +195,11 @@ int main(int argc, char *argv[])
         goto cleanup;
     }
 
+#ifdef CONVOLUTION_GPU
+    printf("GPU convolution completed.\n");
+#else
     printf("CPU convolution completed.\n");
+#endif
     printf("Image: %d x %d\n", M, M);
     printf("Filter: %s, %d x %d\n", argv[3], N, N);
     printf("Output: %s\n", argv[2]);
