@@ -45,7 +45,6 @@ Three measurements were collected for each of five sizes:
 
 The original log reports seconds; this table converts them to milliseconds.
 
-**Status:** implementation, basic correctness validation, and multi-size repeated measurements completed.
 
 ## 3. Part 2: Introduction to CUDA Programming
 
@@ -66,7 +65,6 @@ After warm-up, the program records three kernel timings and checks every output 
 | 1024 | 1.002496 | 0.000076293945 | PASSED; 0 mismatches |
 | 2048 | 7.982496 | 0.00015258789 | PASSED; 0 mismatches |
 
-**Status:** implementation, full-output checks for the recorded sizes, and multi-size measurements completed.
 
 ## 4. Part 3: Running CUDA on a Cloud instance
 
@@ -85,7 +83,6 @@ CUDA test PASSED
 
 The matrix runs in Part 2 further demonstrate successful local CUDA execution at multiple sizes.
 
-**Status:** local GPU alternative completed. Cloud execution was not performed in the recorded work.
 
 ## 5. Part 4: Optimizing CUDA Code
 
@@ -101,7 +98,6 @@ Implemented shared-memory tiling with `TILE_WIDTH = 16`. Threads cooperatively l
 
 Each median comes from three timed runs after warm-up.
 
-**Status:** shared-memory implementation and all three specified sizes completed.
 
 ## 6. Part 5: Performance Comparison
 
@@ -124,7 +120,6 @@ Tiling improves measured GPU computation time by about 1.25–1.33×. Reducing r
 
 Allocation, transfers, launch overhead, and initialization can reduce the benefit at application level. Host/device data residency and repeated use of the same allocations affect that trade-off. The current logs do not separately measure transfer cost or establish an end-to-end crossover size.
 
-**Status:** comparison CSV, speedup calculations, and figures completed. The discussion above records the timing limitations.
 
 ## 7. Part 6: Continued Improvements
 
@@ -194,7 +189,6 @@ All entries are milliseconds. CPU and the first four GPU implementations below u
 4. **How close is your optimized kernel to cuBLAS performance?** The tiled kernel takes about 3.41×, 4.82×, and 8.32× the standalone cuBLAS time. Register reuse narrows that ratio to about 1.81×, 2.28×, and 3.94×.
 5. **Why might cuBLAS still outperform hand-written kernels?** Hardware-specific algorithm selection and more sophisticated blocking, data reuse, and scheduling are plausible explanations. The current logs do not identify the internal cuBLAS kernel or prove which hardware features were used.
 
-The remaining presentation work is to extend the existing plots to all measured implementations, document the optimization research sources, and explain the trade-offs in the video log.
 
 ## 8. Part 7: Creating a Shared Library and Using it in Python
 
@@ -225,8 +219,6 @@ python3 shared_library/test_matrix_lib.py
 ```
 
 These commands describe how to rebuild; they are not a record of commands executed while generating this report.
-
-**Status:** shared-library implementation, Python interface, and basic correctness validation completed.
 
 ## 9. Part 8.1: CPU Convolution and Image Processing
 
